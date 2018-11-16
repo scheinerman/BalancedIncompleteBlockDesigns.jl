@@ -9,3 +9,6 @@ l = 1
 
 A = projective(n)
 @test BIBD_check(A) == (b,v,r,k,l)
+
+A = prime_plane(3)
+@test BIBD_check(A) == (b,v,r,k,l)

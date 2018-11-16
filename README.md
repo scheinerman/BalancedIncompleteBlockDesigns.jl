@@ -28,6 +28,12 @@ blocks of the design (that is, a list of sets).
 The function `projective(n)` creates a projective plane of order `n`.
 This is equivalent to `BIBD(n*n+n+1,n+1,1)`.
 
+#### Projective Planes of Prime Order  
+
+As a convenience, we include `prime_plane(p)` to construct a projective
+plane of order `p` when `p` is prime. This is constructed without the use of
+integer programming and therefore is fast.
+
 ## Verification
 
 `BIBD_check(A)` determines if the integer matrix `A` is a valid
@@ -36,7 +42,7 @@ If not, it throws an error.
 
 ## Examples
 
-In this example, Gurobi diagnostics have been removed.
+In this example, Gurobi messages have been removed.
 
 ```
 julia> A = BIBD(26,13,6,3,1)
@@ -94,6 +100,10 @@ julia> blocks(A)
   {7,8,9,12}  
   {6,10,12,13}
 
+julia> A = prime_plane(17);
+
+julia> BIBD_check(A)
+  (307, 307, 18, 18, 1)
 ```
 ## Stern Warning
 

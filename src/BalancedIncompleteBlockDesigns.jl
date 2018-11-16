@@ -1,7 +1,6 @@
 module BalancedIncompleteBlockDesigns
 
-using JuMP
-using MathProgBase
+using JuMP, MathProgBase, Primes
 using Gurobi
 
 export BIBD, projective, BIBD_check, blocks
@@ -164,6 +163,7 @@ function blocks(A::Array{Int,2})
     [ Set(findall(A[:,j] .> 0)) for j=1:b]
 end
 
+include("prime_plane.jl")
 
 
 end  # end of module
