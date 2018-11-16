@@ -4,7 +4,7 @@ using JuMP
 using MathProgBase
 using Gurobi
 
-export BIBD, projective, BIBD_check
+export BIBD, projective, BIBD_check, blocks
 
 
 """
@@ -155,6 +155,14 @@ function BIBD_check(A::Array{Int,2})
     return (b,v,r,k,l)
 end
 
+"""
+`blocks(A)` gives a list of the blocks of the balanced incomplete block design
+specified by the matrix `A` (e.g., the output of `BIBD`)
+"""
+function blocks(A::Array{Int,2})
+    b,v,r,k,l = BIBD_check(A)
+    [ Set(findall(A[:,j] .> 0)) for j=1:b]
+end
 
 
 

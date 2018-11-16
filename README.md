@@ -18,6 +18,11 @@ equivalent to `BIBD(b,b,k,k,λ)`.
 The function returns a `v`-by-`b` zero-one matrix whose `i,j`-entry
 is `1` exactly when vertex `i` is in block `j`.
 
+#### Blocks
+
+If `A` is the output of `BIBD`, the `blocks(A)` returns a list of the
+blocks of the design (that is, a list of sets).
+
 ## Projective Planes
 
 The function `projective(n)` creates a projective plane of order `n`.
@@ -71,8 +76,24 @@ julia> A = projective(3)
  1  0  0  0  0  0  0  0  1  0  0  1  1
  0  0  0  0  0  0  1  0  0  1  1  0  1
 
-julia> BIBD_check(A)
-(13, 13, 4, 4, 1)
+julia> using ShowSet
+
+julia> blocks(A)
+ 13-element Array{Set{Int64},1}:
+  {2,4,11,12}
+  {5,6,8,11}  
+  {1,7,10,11}
+  {4,5,9,10}  
+  {1,2,6,9}   
+  {2,3,8,10}  
+  {1,4,8,13}  
+  {3,4,6,7}   
+  {1,3,5,12}  
+  {3,9,11,13}
+  {2,5,7,13}  
+  {7,8,9,12}  
+  {6,10,12,13}
+
 ```
 ## Stern Warning
 
