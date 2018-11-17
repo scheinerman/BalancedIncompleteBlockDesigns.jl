@@ -1,5 +1,11 @@
 # Balanced Incomplete Block Designs
 
+[![Build Status](https://travis-ci.org/scheinerman/BalancedIncompleteBlockDesigns.jl.svg?branch=master)](https://travis-ci.org/scheinerman/BalancedIncompleteBlockDesigns.jl)
+
+[![codecov.io](http://codecov.io/github/scheinerman/BalancedIncompleteBlockDesigns.jl/coverage.svg?branch=master)](http://codecov.io/github/scheinerman/BalancedIncompleteBlockDesigns.jl?branch=master)
+
+
+
 The `BalancedIncompleteBlockDesigns` module uses integer programming to create balanced incomplete block designs.
 
 ## Block Design Creation
@@ -42,7 +48,7 @@ If not, it throws an error.
 
 ## Examples
 
-In this example, Gurobi messages have been removed.
+**Note**: Gurobi messages have been removed.
 
 ```
 julia> A = BIBD(26,13,6,3,1)

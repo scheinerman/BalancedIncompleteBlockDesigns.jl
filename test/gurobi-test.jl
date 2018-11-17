@@ -7,5 +7,5 @@ k = n+1
 r = n+1
 l = 1
 
-A = prime_plane(3)
+A = projective(n)
 @test BIBD_check(A) == (b,v,r,k,l)
