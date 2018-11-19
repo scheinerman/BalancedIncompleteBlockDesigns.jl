@@ -1,12 +1,8 @@
 # Balanced Incomplete Block Designs
 
-[![Build Status](https://travis-ci.org/scheinerman/BalancedIncompleteBlockDesigns.jl.svg?branch=master)](https://travis-ci.org/scheinerman/BalancedIncompleteBlockDesigns.jl)
-
-[![codecov.io](http://codecov.io/github/scheinerman/BalancedIncompleteBlockDesigns.jl/coverage.svg?branch=master)](http://codecov.io/github/scheinerman/BalancedIncompleteBlockDesigns.jl?branch=master)
-
-
 
 The `BalancedIncompleteBlockDesigns` module uses integer programming to create balanced incomplete block designs.
+This is a demonstration project of marginal practial use.
 
 ## Block Design Creation
 
