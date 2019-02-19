@@ -20,7 +20,8 @@ function BIBD(b::Int,v::Int,r::Int,k::Int,l::Int)
     @assert b>0 && v>0 && r>0 && k>0 && l>0 && k<v "Invalid parameters: "*errmsg
     @assert b*k==v*r && r*(k-1)==l*(v-1) errmsg
 
-    M = Model(solver=GurobiSolver())
+    M = Model(with_optimizer(Gurobi.Optimizer))
+
     @variable(M, x[1:v,1:b], Bin)       # 1{vtx i in block B}
     @variable(M, y[1:v,1:v,1:b], Bin)   # 1{vtcs i,j in block B} where i≠j
 
@@ -78,13 +79,14 @@ function BIBD(b::Int,v::Int,r::Int,k::Int,l::Int)
         end
     end
 
+    optimize!(M)
+    status = Int(termination_status(M))
 
-    status = solve(M)
-    if status != :Optimal
+    if status != 1
         error(errmsg)
     end
 
-    X = Int.(getvalue(x))
+    X = Int.(value.(x))
 end
 
 BIBD(b::Int,k::Int,l::Int) = BIBD(b,b,k,k,l)
