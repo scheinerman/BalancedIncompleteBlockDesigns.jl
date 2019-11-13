@@ -1,8 +1,5 @@
-
-
-
 module BalancedIncompleteBlockDesigns
-using Gurobi, ChooseOptimizer
+using ChooseOptimizer
 using JuMP, MathProgBase, Primes
 
 export BIBD, projective, BIBD_check, blocks
@@ -17,8 +14,8 @@ to `BIBD(b,b,k,k,λ)`.
 """
 function BIBD(b::Int,v::Int,r::Int,k::Int,l::Int)
     errmsg = "No ($b,$v,$r,$k,$l)-BIBD can be found"
-    set_solver(Gurobi)
-    set_solver_verbose(true)
+    #set_solver(Gurobi)
+    #set_solver_verbose(true)
 
     @assert b>0 && v>0 && r>0 && k>0 && l>0 && k<v "Invalid parameters: "*errmsg
     @assert b*k==v*r && r*(k-1)==l*(v-1) errmsg

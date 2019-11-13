@@ -2,7 +2,7 @@
 
 
 The `BalancedIncompleteBlockDesigns` module uses integer programming to create balanced incomplete block designs.
-This is a demonstration project of marginal practial use.
+This is a demonstration project of marginal practical use.
 
 ## Block Design Creation
 
@@ -44,7 +44,7 @@ If not, it throws an error.
 
 ## Examples
 
-**Note**: Gurobi messages have been removed.
+**Note**: Solver messages have been removed.
 
 ```
 julia> A = BIBD(26,13,6,3,1)
@@ -111,4 +111,5 @@ julia> BIBD_check(A)
 
 This is a demonstration project. We use integer programming to find block
 designs and unless the parameters are small, this can take horribly long.
-We also use the *Gurobi* solver. Edit the source to use another solver.
+We also use the *Gurobi* solver.
+Use `ChooseOptimizer` to specify which optimization solver to use.
