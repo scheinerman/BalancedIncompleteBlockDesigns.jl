@@ -1,10 +1,11 @@
-module BalancedIncompleteBlockDesigns
 
+
+
+module BalancedIncompleteBlockDesigns
+using Gurobi, ChooseOptimizer
 using JuMP, MathProgBase, Primes
-using Gurobi
 
 export BIBD, projective, BIBD_check, blocks
-
 
 """
 `BIBD(b,v,r,k,λ)` finds a `(b,v,r,k,λ)`-balanced incomplete block design.
@@ -16,11 +17,13 @@ to `BIBD(b,b,k,k,λ)`.
 """
 function BIBD(b::Int,v::Int,r::Int,k::Int,l::Int)
     errmsg = "No ($b,$v,$r,$k,$l)-BIBD can be found"
+    set_solver(Gurobi)
+    set_solver_verbose(true)
 
     @assert b>0 && v>0 && r>0 && k>0 && l>0 && k<v "Invalid parameters: "*errmsg
     @assert b*k==v*r && r*(k-1)==l*(v-1) errmsg
 
-    M = Model(with_optimizer(Gurobi.Optimizer))
+    M = Model(get_solver())
 
     @variable(M, x[1:v,1:b], Bin)       # 1{vtx i in block B}
     @variable(M, y[1:v,1:v,1:b], Bin)   # 1{vtcs i,j in block B} where i≠j
