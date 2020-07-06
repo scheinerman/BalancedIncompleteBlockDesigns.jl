@@ -8,7 +8,11 @@ MathProgBase = "fdba3010-5040-5b88-9595-932c9decdf73"
 Primes = "27ebfcd6-29c5-5fa9-bf4b-fb8fc14df3ae"
 
 [compat]
-julia = "≥ 1.0.0"
+julia = "1"
+JuMP = "0"
+MathProgBase = "0"
+Primes = "0"
+ChooseOptimizer = "0"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
