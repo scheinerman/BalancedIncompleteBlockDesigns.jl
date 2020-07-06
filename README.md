@@ -111,5 +111,5 @@ julia> BIBD_check(A)
 
 This is a demonstration project. We use integer programming to find block
 designs and unless the parameters are small, this can take horribly long.
-We also use the *Gurobi* solver.
+We recommend the use of the *Gurobi* solver.
 Use `ChooseOptimizer` to specify which optimization solver to use.
