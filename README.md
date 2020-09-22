@@ -1,4 +1,4 @@
-# Balanced Incomplete Block Designs
+# BalancedIncompleteBlockDesigns
 
 
 The `BalancedIncompleteBlockDesigns` module uses integer programming to create balanced incomplete block designs.
