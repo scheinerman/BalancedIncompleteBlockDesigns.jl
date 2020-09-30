@@ -1,5 +1,7 @@
 # BalancedIncompleteBlockDesigns
 
+[![Build Status](https://travis-ci.com/scheinerman/BalancedIncompleteBlockDesigns.jl.svg?branch=master)](https://travis-ci.com/scheinerman/BalancedIncompleteBlockDesigns.jl)
+
 
 The `BalancedIncompleteBlockDesigns` module uses integer programming to create balanced incomplete block designs.
 This is a demonstration project of marginal practical use.
